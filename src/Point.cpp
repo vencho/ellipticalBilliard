@@ -5,12 +5,24 @@
 Point::Point() { 
 }
 
+double Point::operator^(Point p) const {
+  return x*p.y - y*p.x;
+}
+
+Point Point::operator-(Point p) const {
+  return Point(p.x - x, p.y - y);
+}
+
+Point Point::operator+(Point p) const {
+  return Point(p.x + x, p.y + y);
+}
+
 Point::Point(double x, double y) {
   this -> x = x;
   this -> y = y;
 }
 
-double Point::norm() {
+double Point::norm() const {
   return sqrt(x*x + y*y);
 }
 

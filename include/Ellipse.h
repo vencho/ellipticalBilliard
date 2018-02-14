@@ -10,6 +10,7 @@ public:
   Ellipse(double a, double b);
   bool isInternal(Point & p);
   void reflect(MovingPoint & p);
+  Point tangentVector(Point &p);
   Point stdParam(double angle);
   Point leftFocusParam(double angle);
   Point rightFocusParam(double angle);
@@ -17,5 +18,7 @@ public:
   double leftFocusArm(double angle);
   double rightFocusArm(double angle);
   double centreArm(double angle);
+  Point getLeftFocus();
+  Point getRightFocus();
 };
 #endif

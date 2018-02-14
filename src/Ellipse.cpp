@@ -13,6 +13,20 @@ Ellipse::Ellipse(double a, double b) {
   e = c / a;
 }
 
+Point Ellipse::getLeftFocus() {
+  return Point(-c, 0);
+}
+
+Point Ellipse::getRightFocus() {
+  return Point(c, 0);
+}
+
+Point Ellipse::tangentVector(Point &p) {
+  Point normal = Point(2*p.x / (a*a), 2*p.y / (b*b));
+  Point tangent = Point(-normal.y, normal.x);
+  return tangent;
+}
+
 bool Ellipse::isInternal(Point & p) {
   return (p.x * p.x) / (a*a) + (p.y*p.y) / (b*b) < 1;
 }

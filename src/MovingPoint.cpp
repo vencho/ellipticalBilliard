@@ -1,5 +1,7 @@
 #include<MovingPoint.h>
 
+MovingPoint::MovingPoint() { }
+  
 MovingPoint::MovingPoint(double x, double y, double dx, double dy) : Point(x, y), h(dx, dy) {
   h.normalise();
 }
